@@ -10,7 +10,7 @@ Shop Item is a simple theme which can be used by shopping websites. Its base the
 REQUIREMENTS
 ------------
 
-* Bootstrap base theme
+* Bootstrap theme (https://www.drupal.org/project/bootstrap)
 * Commerce module
 
 INSTALLATION
