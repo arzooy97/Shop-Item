@@ -1,4 +1,4 @@
-# Default settings should not be located here. This file is only used to
+  # Default settings should not be located here. This file is only used to
 # initially install a theme's "settings".
 #
 # Instead, the Drupal Bootstrap base theme uses the @BootstrapSetting

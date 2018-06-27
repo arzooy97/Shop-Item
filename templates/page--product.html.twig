@@ -97,10 +97,6 @@
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
 
-      {# Header #}
-      {% if page.header %}
-      {% endif %}
-
       {# Sidebar First #}
       {% if page.sidebar_first %}
         {% block sidebar_first %}
@@ -110,6 +106,16 @@
         {% endblock %}
       {% endif %}
 
+      {# Header #}
+      {% if page.header %}
+        {% block header %}
+          <div class="col-sm-9" role="heading">
+            {{ page.header }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
+      
       {# Content #}
       {%
         set content_classes = [
@@ -119,7 +125,22 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
         ]
       %}
-   
+      <section{{ content_attributes.addClass(content_classes) }}>
+
+        
+        {# Content #}
+        {% block content %}
+          <a id="main-content"></a>
+          {{ page.content }}
+        {% endblock %}
+
+        {% block gallery %}
+        {{ page.gallery }}
+        {% endblock %}
+
+      </section>
+
+    
     </div>
   </div>
 {% endblock %}
